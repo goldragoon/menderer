@@ -1,0 +1,4 @@
+C:/Users/dw112/Documents/GitHub/menderer/thirdparty/glad-0.1.34/CMakeFiles/glad-generate-files.dir
+C:/Users/dw112/Documents/GitHub/menderer/thirdparty/glad-0.1.34/CMakeFiles/glad.dir
+C:/Users/dw112/Documents/GitHub/menderer/thirdparty/glad-0.1.34/CMakeFiles/ALL_BUILD.dir
+C:/Users/dw112/Documents/GitHub/menderer/thirdparty/glad-0.1.34/CMakeFiles/ZERO_CHECK.dir

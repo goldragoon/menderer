@@ -22,11 +22,12 @@
 
 #==============================================================================
 # CMake file for Menderer project.
-# Author: Robert Maier (robert.maier@tum.de)
+# Original Author: Robert Maier (robert.maier@tum.de)
+# Contributer : Gyu Jin Choi (paganinist@gmail.com)
 #==============================================================================
 
 #==============================================================================
-CMAKE_MINIMUM_REQUIRED(VERSION 2.6 FATAL_ERROR)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.2 FATAL_ERROR)
 PROJECT(Menderer C CXX)
 
 #==============================================================================
@@ -40,26 +41,26 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 #==============================================================================
 
 # include header-only third-party libraries (Eigen, CLI11)
-INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/third_party/include/)
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/thirdparty/headeronly)
 
 # OpenCV
-FIND_PACKAGE(OpenCV 3.0.0 COMPONENTS core highgui imgproc REQUIRED)
+FIND_PACKAGE(OpenCV 4.3.0 COMPONENTS core highgui imgproc REQUIRED)
 IF(OPENCV_CORE_FOUND)
     INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS})
+    MESSAGE(STATUS "${OpenCV_LIBS}")
 ENDIF()
 
-# OpenGL
-SET(OpenGL_GL_PREFERENCE "GLVND")
-FIND_PACKAGE(OpenGL REQUIRED)
-INCLUDE_DIRECTORIES(${OPENGL_INCLUDE_DIR})
-MESSAGE(STATUS "OpenGL (include ${OPENGL_INCLUDE_DIR}, libs ${OPENGL_LIBRARIES}")
+# GLAD (build directly from third-party subdirectory)
+ADD_SUBDIRECTORY("${PROJECT_SOURCE_DIR}/thirdparty/glad-0.1.34/")
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/thirdparty/glad-0.1.34/include)
 
 # GLFW3 (build directly from third-party subdirectory)
 SET(GLFW_BUILD_DOCS OFF CACHE BOOL "Build the GLFW docs")
 SET(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "Build the GLFW example programs")
 SET(GLFW_BUILD_TESTS OFF CACHE BOOL "Build the GLFW tests")
-ADD_SUBDIRECTORY(${PROJECT_SOURCE_DIR}/third_party/glfw-3.3/)
-INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/third_party/glfw-3.3/include)
+SET(GLFW_INSTALL OFF CHACHE BOOL "Generate installation target")
+ADD_SUBDIRECTORY("${PROJECT_SOURCE_DIR}/thirdparty/glfw-3.3.2/")
+INCLUDE_DIRECTORIES(${PROJECT_SOURCE_DIR}/thirdparty/glfw-3.3.2/include)
 
 #==============================================================================
 # Build Menderer application
@@ -101,8 +102,7 @@ SOURCE_GROUP("Source Files" FILES ${srcs})
 ADD_EXECUTABLE(${PROJECT_NAME} ${incs} ${srcs} )
 TARGET_LINK_LIBRARIES(${PROJECT_NAME}
     ${OpenCV_LIBS}
-    ${OPENGL_LIBRARIES}
     glfw
-    ${GLFW_LIBRARIES}
+    glad
 )
 TARGET_COMPILE_OPTIONS(${PROJECT_NAME} PRIVATE -std=c++11)

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\dw112\Documents\GitHub\menderer\thirdparty\glad-0.1.34\CMakeFiles\a8ad6cfa7478321d6531e2f2099d0333\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{15CC85C1-D2BE-3918-AA58-29DCCD4D3C2F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

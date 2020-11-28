@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\dw112\Documents\GitHub\menderer\thirdparty\glad-0.1.34\src\glad.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\dw112\Documents\GitHub\menderer\thirdparty\glad-0.1.34\include\glad\glad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\dw112\Documents\GitHub\menderer\thirdparty\glad-0.1.34\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{15CC85C1-D2BE-3918-AA58-29DCCD4D3C2F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{9885D94B-DCDE-3C88-BF99-F91F3D41B960}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{435A3F49-C5A8-3C27-8E4E-890D8DA39AFE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

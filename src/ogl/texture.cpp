@@ -243,7 +243,7 @@ namespace ogl
             if (num_channels == 1)
                 internal_format = GL_R32F;   //GL_LUMINANCE32F_ARB //GL_INTENSITY32F_ARB;
             else if (num_channels == 2)
-                internal_format = GL_LUMINANCE_ALPHA32F_ARB;
+                internal_format = GL_RG32F;
             else if (num_channels == 3)
                 internal_format = GL_RGB32F;
             else if (num_channels == 4)

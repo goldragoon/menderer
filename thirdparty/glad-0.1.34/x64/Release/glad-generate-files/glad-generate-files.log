@@ -1,0 +1,7 @@
+﻿  Generating GLAD
+  [11/28/2020 15:58:15][INFO	][glad   	]: downloading latest 'gl' specification
+  [11/28/2020 15:58:15][INFO	][glad.opener	]: opening: 'https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml'
+  [11/28/2020 15:58:16][INFO	][glad   	]: generating 'gl' bindings
+  [11/28/2020 15:58:16][INFO	][glad.opener	]: saving: 'https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/master/api/KHR/khrplatform.h' to 'C:\Users\dw112\Documents\GitHub\menderer\thirdparty\glad-0.1.34\include\KHR\khrplatform.h'
+  [11/28/2020 15:58:16][INFO	][glad   	]: generating 'gl' bindings - done
+  Building Custom Rule C:/Users/dw112/Documents/GitHub/menderer/thirdparty/glad-0.1.34/CMakeLists.txt

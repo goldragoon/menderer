@@ -1,0 +1,10 @@
+^C:\USERS\DW112\DOCUMENTS\GITHUB\MENDERER\THIRDPARTY\GLAD-0.1.34\CMAKEFILES\A8AD6CFA7478321D6531E2F2099D0333\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/dw112/Documents/GitHub/menderer/thirdparty/glad-0.1.34 -BC:/Users/dw112/Documents/GitHub/menderer/thirdparty/glad-0.1.34 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/dw112/Documents/GitHub/menderer/thirdparty/glad-0.1.34/GLAD.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

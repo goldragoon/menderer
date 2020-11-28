@@ -23,6 +23,7 @@
 // define GL_GLEXT_PROTOTYPES for using glGenBuffers etc
 #define GL_GLEXT_PROTOTYPES
 // include GLFW (which also includes all required OpenGL headers)
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 
 #include <iostream>
@@ -44,6 +45,7 @@ namespace ogl
             std::cerr << "Failed to initialize GLFW!" << std::endl;
             return false;
         }
+
         // create GLFW offscreen context
         glfwWindowHint(GLFW_VISIBLE, false);
         GLFWwindow* ogl_context = glfwCreateWindow(1, 1, "", nullptr, nullptr);
@@ -54,6 +56,11 @@ namespace ogl
             return false;
         }
         glfwMakeContextCurrent(ogl_context);
+
+        if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+            std::cout << "Failed to initialize OpenGL context" << std::endl;
+            return -1;
+        }
 
         return true;
     }

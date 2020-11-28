@@ -1,51 +1,36 @@
-# Menderer - Batch Mesh Renderer
+# Menderer
 
-**Menderer** is a simple OpenGL mesh renderer for batch rendering a 3D triangle mesh into a list of specified camera poses.
-It supports meshes in [PLY (ascii or binary)](https://en.wikipedia.org/wiki/PLY_(file_format)) format.
+**Menderer** is a OpenGL-based 3D triangle mesh renderer. The primary purpose of this project is batch rendering a 3D triangle mesh into a list of specified camera poses. This repository is modification of [Dr.Robert Maier's](https://github.com/robmaier) [Menderer](https://github.com/robmaier/menderer), for my own purpose. 
+Menderer supports meshes in [PLY (ascii or binary)](https://en.wikipedia.org/wiki/PLY_(file_format)) format.
 While various shadings (e.g. [Phong shading](https://en.wikipedia.org/wiki/Phong_shading)) are implemented, there is currently no support for texture/normal maps.
 The tool is written in C++ and can be executed as a standalone command line application.
 
-If you find the Menderer source code useful in your research or project, please feel free to cite it as follows:
-```
-@misc{menderer,
-  title = {Menderer - Batch Mesh Renderer},
-  author = {Maier, Robert},
-  howpublished = "\url{https://github.com/robmaier/menderer}",
-  year={2019}
-}
-```
-
-
 ## Installation
-The code was mostly developed and tested on Ubuntu Linux, hence we only provide the build instructions for Ubuntu in the following.
-However, the code should also work on other platforms.
-
-Please first clone the source code:
-```
-git clone https://github.com/robmaier/menderer.git
-```
+Note that, currently the runtime environments that we are targeted & tested are, x86-64 based Windows and Linux systems.
 
 ### Dependencies
 Menderer requires
-[CMake](https://cmake.org/download/),
-[OpenCV 3](https://opencv.org/releases.html),
+[CMake >= 3.1.0](https://cmake.org/download/),
+[OpenCV >= 4.3.0](https://opencv.org/releases.html),
 [Eigen](http://eigen.tuxfamily.org/),
 [CLI11](https://github.com/CLIUtils/CLI11/),
+[GLAD >= 0.1.34](https://github.com/Dav1dde/glad/tags),
 [GLFW3](https://www.glfw.org/),
 [happly](https://github.com/nmwsharp/happly)
 as third-party dependencies.
-While Eigen, CLI11 and GLFW3 are already contained in the ```third_party``` folder, the other dependencies can be installed directly from the default Ubuntu repositories:
+While Eigen, CLI11 and GLFW3 are already contained in the ```thirdparty``` folder, the other dependencies can be installed directly from the default Ubuntu repositories:
 ```
 sudo apt install cmake libopencv-dev
 ```
-
+If you are working on windows, consider to use [vcpkg](https://github.com/microsoft/vcpkg) as package manager.
 ### Build Menderer
 To compile the Menderer application, use the standard CMake approach:
 ```
+git clone https://github.com/goldragoon/menderer.git
 mkdir build
 cd build/
-cmake .. -DCMAKE_BUILD_TYPE=Release
-make -j6
+cmake ..
+make
 ```
 
 ## Run Menderer
@@ -183,4 +168,4 @@ The Menderer source code is licensed under the [GNU General Public License Versi
 
 
 ## Contact
-If you have any questions, please contact [Robert Maier &lt;robert.maier@tum.de>](mailto:robert.maier@tum.de).
+If you have any questions, please contact [Gyu Jin Choi &lt;paganinist@gmail.com>](paganinist@gmail.com).
